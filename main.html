@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Link Notify</title>
+  </head>
+  <!--  client_id 要填網站上取得的那個，詳情可參考https://medium.com/@r3850355/%E7%AD%86%E8%A8%98-line-notify-c9cead119dc1 -->
+  <!--  redirect_uri 要填寫要點擊按鈕後，引導的網址，就是這個服務的id+port -->
+  <!--  redirect_uri 在有人連動時會收到一個帶有 CODE 的 POST 請求,要把此code存起來-->
+  <!--  其他參數可都不用動 -->
+  <body>
+    <button onclick="Auth();">點選這裡連結到LineNotify</button>
+    <script>
+      function Auth() {
+        var URL = "https://notify-bot.line.me/oauth/authorize?";
+        URL += "response_type=code";
+        URL += "&client_id=XXXXX";
+        URL += "&redirect_uri=XXXXX";
+        URL += "&scope=notify";
+        URL += "&state=nostate";
+        window.location.href = URL;
+      }
+    </script>
+  </body>
+</html>
